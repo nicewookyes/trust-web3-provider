@@ -181,6 +181,8 @@ class TrustWeb3Provider extends BaseProvider {
                     return this.eth_sendTransaction(payload);
                 case "eth_getBalance":
                     return this.eth_getBalance(payload);
+                case "eth_call":
+                    return this.eth_call(payload);
                 case "eth_requestAccounts":
                     return this.eth_requestAccounts(payload);
                 case "wallet_watchAsset":
@@ -332,6 +334,10 @@ class TrustWeb3Provider extends BaseProvider {
 
     eth_getBalance(payload) {
         this.postMessage("getBalance", payload.id, payload.params[0]);
+    }
+
+    eth_call(payload) {
+        this.postMessage("ethCall", payload.id, payload.parmas[0]);
     }
 
     eth_sendTransaction(payload) {
