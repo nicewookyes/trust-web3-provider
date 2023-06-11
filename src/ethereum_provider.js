@@ -337,7 +337,7 @@ class TrustWeb3Provider extends BaseProvider {
     }
 
     eth_call(payload) {
-        this.postMessage("ethCall", payload.id, payload.parmas[0]);
+        this.postMessage("ethCall", payload.id, payload.params[0]);
     }
 
     eth_sendTransaction(payload) {
