@@ -13,6 +13,7 @@ import IdMapping from "./id_mapping";
 import isUtf8 from "isutf8";
 import {TypedDataUtils, SignTypedDataVersion} from "@metamask/eth-sig-util";
 import BaseProvider from "./base_provider";
+import {object} from "../dist/trust-min";
 
 class TrustWeb3Provider extends BaseProvider {
     constructor(config) {
@@ -155,7 +156,7 @@ class TrustWeb3Provider extends BaseProvider {
                 }
             });
             if(this.isDebug){
-                console.log(`发起请求： ${JSON.stringify(this.callbacks)}`);
+                console.log(`发起请求： ${object.keys(this.callbacks)}`);
             }
             this.wrapResults.set(payload.id, wrapResult);
 
@@ -406,7 +407,7 @@ class TrustWeb3Provider extends BaseProvider {
                     result
                 )}, data: ${JSON.stringify(data)}`
             );
-            console.log(`收到回调： ${JSON.stringify(this.callbacks)}`);
+            console.log(`收到回调： ${Object.keys(this.callbacks).length}`);
         }
         if (callback) {
             wrapResult ? callback(null, data) : callback(null, result);
