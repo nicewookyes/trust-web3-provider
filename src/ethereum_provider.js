@@ -13,7 +13,6 @@ import IdMapping from "./id_mapping";
 import isUtf8 from "isutf8";
 import {TypedDataUtils, SignTypedDataVersion} from "@metamask/eth-sig-util";
 import BaseProvider from "./base_provider";
-import {object} from "../dist/trust-min";
 
 class TrustWeb3Provider extends BaseProvider {
     constructor(config) {
