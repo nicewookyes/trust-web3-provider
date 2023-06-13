@@ -382,6 +382,7 @@ class TrustWeb3Provider extends BaseProvider {
      * @private Internal native result -> js
      */
     sendResponse(id, result) {
+        console.log(this.callbacks);
         let originId = this.idMapping.tryPopId(id) || id;
         let callback = this.callbacks.get(id);
         let wrapResult = this.wrapResults.get(id);
