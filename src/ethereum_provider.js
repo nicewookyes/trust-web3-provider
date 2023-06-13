@@ -156,7 +156,7 @@ class TrustWeb3Provider extends BaseProvider {
                 }
             });
             if(this.isDebug){
-                console.log(`发起请求： ${JSON.stringify(object.keys(this.callbacks))}`);
+                console.log(`发起请求： ${JSON.stringify(Object.keys(this.callbacks))}`);
             }
             this.wrapResults.set(payload.id, wrapResult);
 
