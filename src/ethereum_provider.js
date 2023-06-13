@@ -154,6 +154,7 @@ class TrustWeb3Provider extends BaseProvider {
                     resolve(data);
                 }
             });
+            console.log(this.callbacks);
             this.wrapResults.set(payload.id, wrapResult);
 
             switch (payload.method) {
