@@ -41,6 +41,7 @@ class BaseProvider extends EventEmitter {
       console.log(
         `<== sendResponse id: ${id}, result: ${JSON.stringify(result)}`
       );
+      console.log("基类的回调");
     }
     if (callback) {
       callback(null, result);

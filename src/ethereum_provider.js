@@ -154,7 +154,9 @@ class TrustWeb3Provider extends BaseProvider {
                     resolve(data);
                 }
             });
-            console.log(`发起请求： ${JSON.stringify(this.callbacks)}`);
+            if(this.isDebug){
+                console.log(`发起请求： ${JSON.stringify(this.callbacks)}`);
+            }
             this.wrapResults.set(payload.id, wrapResult);
 
             switch (payload.method) {
@@ -383,7 +385,9 @@ class TrustWeb3Provider extends BaseProvider {
      * @private Internal native result -> js
      */
     sendResponse(id, result) {
-        console.log(`收到回调： ${JSON.stringify(this.callbacks)}`);
+        if(this.isDebug){
+            console.log(`收到回调： ${JSON.stringify(this.callbacks)}`);
+        }
         let originId = this.idMapping.tryPopId(id) || id;
         let callback = this.callbacks.get(id);
         let wrapResult = this.wrapResults.get(id);
