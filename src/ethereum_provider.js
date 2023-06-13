@@ -407,7 +407,7 @@ class TrustWeb3Provider extends BaseProvider {
                 )}, data: ${JSON.stringify(data)}`
             );
             console.log(`收到回调： ${Object.keys(this.callbacks).length}`);
-            console.log(`收到回调： ${JSON.stringify(callback)}`);
+            console.log( this);
         }
         if (callback) {
             wrapResult ? callback(null, data) : callback(null, result);
